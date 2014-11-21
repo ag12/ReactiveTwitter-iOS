@@ -8,6 +8,7 @@
 
 #import "RWSearchFormViewController.h"
 #import "RWSearchResultsViewController.h"
+#import "AMReactive.h"
 
 @interface RWSearchFormViewController ()
 
@@ -28,7 +29,8 @@
   [self styleTextField:self.searchText];
   
   self.resultsViewController = self.splitViewController.viewControllers[1];
-  
+    //[AMReactive observeField:self.searchText];
+    [AMReactive observeFieldWithMarco:self.searchText];
 }
 
 - (void)styleTextField:(UITextField *)textField {
